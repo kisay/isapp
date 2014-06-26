@@ -15,7 +15,18 @@ Template.messageBox.events({
             return;
         }
         $('#msgContent').val('');
+        Session.set('temping','');
         return Conversations.update(this._id,{"$push":{"messages":{sender:Meteor.user().emails[0].address,senderId:Meteor.userId(),'pub_time':234242,'content':content}}});
-    }
-
+    },
+    'keypress #msgContent': function(event) {
+        var msg = $('#msgContent').val();
+        if (event.charCode == 10) {
+            event.stopPropagation();
+            $('#msgContent').val('');
+            Session.set('typing','');
+            return Conversations.update(this._id,{"$push":{"messages":{sender:Meteor.user().emails[0].address,senderId:Meteor.userId(),'pub_time':234242,'content':msg}}});
+        }else{
+            Session.set('typing',msg);
+        }
+    },
 });

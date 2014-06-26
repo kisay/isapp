@@ -5,20 +5,28 @@
             <span class="glyphicon glyphicon-user"></span>&nbsp;
             <span class="panel-title"> 联系人</span>
         </div>
+        {{#with friendList}}
+        {{#each friends}}123123
+        {{/each}}
         <div class="panel-body">
-            <ul class="list-group" id="collapseOne">
-                <li class="list-group-item">
-                <span class="badge">14</span>
-                Cras justo odio
-                </li>
-                <li class="list-group-item">
-                <span class="badge">14</span>
-                Cras justo odio
-                </li>
+            <div>
+                <div class="">{{tag}}</div>
+                <ul class="list-group" id="collapseOne">
+                    <li class="list-group-item">
+                    <span class="badge">14</span>
+                    Cras justo odio
+                    </li>
+                    <li class="list-group-item">
+                    <span class="badge">14</span>
+                    Cras justo odio
+                    </li>
 
-            </ul>
+                </ul>
+
+            </div>
 
         </div>
+        {{/with}}
     </div>
 </div>
 </template>
