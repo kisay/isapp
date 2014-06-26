@@ -1,4 +1,5 @@
 <template name="messageBox">
+{{#with currentChat}}
 <div class="panel panel-info">
     <div class="panel-heading">
         <span class="glyphicon glyphicon-comment"></span>&nbsp;
@@ -6,31 +7,22 @@
     </div>
     <div class="panel-body">
         <div class="msgbox" style="height:205px;overflow:auto">
-            <div class="alert alert-warning fade in pull-right clearfix">
-                Best check yo self, you're not looking too good.
+            {{#each messages}}
+            <div class="pull-right" style="clear:both">
+            <p class="text-right msgtitle">{{sender}}</p>
+            <p class="alert alert-warning msgbox inline pull-right">
+                {{content}}
+            </p>
             </div>
-            <div class="alert alert-success fade in clearfix " style="display:inline-block">
-                Best check yo self, you're not looking too good.
-            </div>
-            <div class="alert alert-danger fade in clearfix " style="display:inline-block">
-                Best check yo self, you're not looking too good.
-            </div>
-            <div class="alert alert-danger fade in clearfix " style="display:inline-block">
-                Best check yo self, you're not looking too good.
-            </div>
-            <div class="alert alert-danger fade in clearfix " style="display:inline-block">
-                Best check yo self, you're not looking too good.
-            </div>
-            <div class="alert alert-danger fade in clearfix " style="display:inline-block">
-                Best check yo self, you're not looking too good.
-            </div>
+            {{/each}}
         </div>
         <div class="subform">
-            <textarea class="form-control" rows="3"></textarea>
+            <textarea id="msgContent" class="form-control" rows="3"></textarea>
             <div>
-                <button class="pull-right">发送</button>
+                <button class="pull-right" id="sendBtn">发送</button>
             </div>
        </div>
     </div>
 </div>
+{{/with}}
 </template>
