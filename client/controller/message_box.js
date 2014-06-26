@@ -15,7 +15,7 @@ Template.messageBox.events({
             return;
         }
         $('#msgContent').val('');
-        return Conversations.update(this._id,{"$push":{"messages":{sender:Meteor.user().emails[0].address,'pub_time':234242,'content':content}}});
+        return Conversations.update(this._id,{"$push":{"messages":{sender:Meteor.user().emails[0].address,senderId:Meteor.userId(),'pub_time':234242,'content':content}}});
     }
 
 });

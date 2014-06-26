@@ -8,19 +8,29 @@
     <div class="panel-body">
         <div class="msgbox" style="height:205px;overflow:auto">
             {{#each messages}}
+            {{#if $eq currentUser._id senderId }}
             <div class="pull-right" style="clear:both">
-            <p class="text-right msgtitle">{{sender}}</p>
-            <p class="alert alert-warning msgbox inline pull-right">
+                <p class="text-right msgtitle">{{sender}}</p>
+                <p class="alert alert-warning msgbox inline pull-right">
                 {{content}}
-            </p>
+                </p>
             </div>
+            {{else}}
+            <div style="clear:both">
+                <p class="msgtitle">{{sender}}</p>
+                <p class="alert alert-warning msgbox inline">
+                {{content}}
+                </p>
+            </div>
+
+            {{/if}}
             {{/each}}
         </div>
         <div class="subform">
             <textarea id="msgContent" class="form-control" rows="3"></textarea>
-            <div>
+            <p>
                 <button class="pull-right" id="sendBtn">发送</button>
-            </div>
+            </p>
        </div>
     </div>
 </div>

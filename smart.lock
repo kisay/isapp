@@ -5,7 +5,8 @@
       "bootstrap-3": {},
       "accounts-ui-bootstrap-3": {},
       "iron-router": {},
-      "autoform": {}
+      "autoform": {},
+      "handlebar-helpers": {}
     },
     "packages": {
       "bootstrap-3": {
@@ -25,8 +26,13 @@
       },
       "autoform": {
         "git": "https://github.com/aldeed/meteor-autoform.git",
-        "tag": "v0.13.1",
-        "commit": "e77832d40f8eec2ddb92d97f481bf86fb712d9ca"
+        "tag": "v0.13.3",
+        "commit": "23a7ba0754f353513fda44f666b600e69c62a208"
+      },
+      "handlebar-helpers": {
+        "git": "https://github.com/raix/Meteor-handlebar-helpers.git",
+        "tag": "v0.1.1",
+        "commit": "0b407ab65e7c1ebd53d71aef0de2e2c1d21a597c"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
