@@ -1,0 +1,12 @@
+<template name="search">
+{{#if searchResult }}
+<ul>
+    {{#each searchResult}}
+    <li class="reslist">{{username}} <button class="add-friends">添加好友</button></li>
+    {{/each}}
+
+</ul>
+{{else}}
+<p>没有搜索到任何好友哦</p>
+{{/if}}
+</template>

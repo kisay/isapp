@@ -1,0 +1,29 @@
+<template name="leftMenu">
+<div class="panel-group list-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="glyphicon glyphicon-user"></span>&nbsp;
+            <span class="panel-title"> 联系人</span>
+        </div>
+        {{#with friendList}}
+        <div class="panel-body">
+            <div>
+                <ul class="list-group" id="collapseOne">
+                    {{#each friends }}
+                    <li class="list-group-item">
+                    <a class="friends-list">
+                    <span class="badge">{{tag}}</span>
+                        {{fid}}
+                        </a>
+                    </li>
+                   {{/each}}
+                </ul>
+
+            </div>
+
+        </div>
+        {{/with}}
+    </div>
+</div>
+</template>
+
