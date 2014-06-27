@@ -6,21 +6,17 @@
             <span class="panel-title"> 联系人</span>
         </div>
         {{#with friendList}}
-        {{#each friends}}123123
-        {{/each}}
         <div class="panel-body">
             <div>
-                <div class="">{{tag}}</div>
                 <ul class="list-group" id="collapseOne">
+                    {{#each friends }}
                     <li class="list-group-item">
-                    <span class="badge">14</span>
-                    Cras justo odio
+                    <a class="friends-list">
+                    <span class="badge">{{tag}}</span>
+                        {{fid}}
+                        </a>
                     </li>
-                    <li class="list-group-item">
-                    <span class="badge">14</span>
-                    Cras justo odio
-                    </li>
-
+                   {{/each}}
                 </ul>
 
             </div>

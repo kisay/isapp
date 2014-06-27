@@ -1,7 +1,6 @@
 Template.messageBox.helpers({
     currentChat: function(){
-        return Conversations.findOne(Session.get('current_conversation'));
-
+        return Conversations.findOne({});
     }
 
 
@@ -16,7 +15,7 @@ Template.messageBox.events({
         }
         $('#msgContent').val('');
         Session.set('temping','');
-        return Conversations.update(this._id,{"$push":{"messages":{sender:Meteor.user().emails[0].address,senderId:Meteor.userId(),'pub_time':234242,'content':content}}});
+        return Conversations.update(this._id,{"$push":{"messages":{sender:Meteor.user().username,senderId:Meteor.userId(),'pub_time':234242,'content':content}}});
     },
     'keypress #msgContent': function(event) {
         var msg = $('#msgContent').val();
@@ -24,7 +23,7 @@ Template.messageBox.events({
             event.stopPropagation();
             $('#msgContent').val('');
             Session.set('typing','');
-            return Conversations.update(this._id,{"$push":{"messages":{sender:Meteor.user().emails[0].address,senderId:Meteor.userId(),'pub_time':234242,'content':msg}}});
+            return Conversations.update(this._id,{"$push":{"messages":{sender:Meteor.user().username,senderId:Meteor.userId(),'pub_time':234242,'content':msg}}});
         }else{
             Session.set('typing',msg);
         }

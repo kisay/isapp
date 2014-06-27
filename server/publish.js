@@ -1,14 +1,18 @@
 //资源发布
 
-Meteor.publish('conversations', function(user_id,conversation_id){
-    //return Conversations.find({_id:conversation_id, 'uids':user_id});
+Meteor.publish('conversations', function(conversation_id){
+   // return Conversations.find({_id:conversation_id, 'uids':this.userId});
     return Conversations.find({});
 });
 
-Meteor.publish('friends', function(uid){
-    return Friends.find({});
+Meteor.publish('friends', function(){
+    return Friends.find({uid:this.userId});
 });
 
+//指定用户名查询
+Meteor.publish('allusers', function(){
+    return Meteor.users.find({},{_id:1,username:1})
+})
 
 //通知
 //Meteor.publish('notifications', function(userid){
