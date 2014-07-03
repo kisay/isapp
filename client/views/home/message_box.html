@@ -1,5 +1,4 @@
 <template name="messageBox">
-{{#with currentChat}}
 <div class="panel panel-info">
     <div class="panel-heading">
         <span class="glyphicon glyphicon-comment"></span>&nbsp;
@@ -7,6 +6,7 @@
     </div>
     <div class="panel-body">
         <div class="msgbox" style="height:205px;overflow:auto">
+        {{#with currentChat}}
             {{#each messages}}
             {{#if $eq currentUser._id senderId }}
             <div class="pull-right" style="clear:both">
@@ -25,6 +25,7 @@
 
             {{/if}}
             {{/each}}
+        {{/with}}
         </div>
         <div class="subform">
             <textarea id="msgContent" class="form-control" rows="3"></textarea>
@@ -34,5 +35,4 @@
        </div>
     </div>
 </div>
-{{/with}}
 </template>

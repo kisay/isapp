@@ -4,3 +4,7 @@ Handlebars.registerHelper('ifCond', function(v1, v2, options) {
     }
   return options.inverse(this);
 });
+
+function timeDiff(timestamp){
+    return timestamp/1000;
+}
