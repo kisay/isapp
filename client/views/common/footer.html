@@ -1,7 +1,14 @@
 <template name="footer">
 
 <div id="footer" class="navbar-fixed-bottom">
-    <p class="text-center"> 这是页面底部 </p>
+    <p class="text-center"> 
+
+    {{#if $.Meteor.status.connected}}
+        已连接服务器
+    {{else}}
+        服务器连接故障
+    {{/if}}
+    </p>
 </div>
 
 </template>

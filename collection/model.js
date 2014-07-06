@@ -8,6 +8,5 @@ Friends = new Meteor.Collection('friends');
 //群组
 //{gid:123,info:'sdfsdf',create_id, create_time:12313, notice:'通告',members:[1,23,444,343]}
 Groups = new Meteor.Collection('groups');
-
 //通知
 Notifications = new Meteor.Collection('notifications');

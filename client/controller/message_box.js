@@ -1,8 +1,10 @@
 Template.messageBox.helpers({
     currentChat: function(){
-        return Conversations.findOne({});
+        return Conversations.findOne({_id:Session.get('currentContact')});
+    },
+    chatCount: function(){
+        return  Conversations.findOne({_id:Session.get('currentContact')}).uids.count();
     }
-
 
 });
 

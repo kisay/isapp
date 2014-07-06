@@ -1,5 +1,5 @@
 <template name="search">
-{{#if searchResult }}
+{{#if searchResult.count}}
 <ul>
     {{#each searchResult}}
     <li class="reslist">{{username}} <button class="add-friends">添加好友</button></li>
@@ -7,6 +7,5 @@
 
 </ul>
 {{else}}
-<p>没有搜索到任何好友哦</p>
-{{/if}}
-</template>
+<h2>没有搜索到任何好友哦</h2>
+{{/if}} </template>
